@@ -11,7 +11,9 @@
     "preview": "cross-env NODE_ENV=\"production\" webpack-dev-server",
     "lint:js": "eslint ./src ./webpack ./*.js -f table --ext .js --ext .jsx",
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",
-    "lint": "npm run lint:js && npm run lint:scss"
+    "lint": "npm run lint:js && npm run lint:scss",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -63,6 +65,8 @@
     "moment": "^2.19.1",
     "perfect-scrollbar": "^1.1.0",
     "popper.js": "^1.12.6",
-    "skycons": "^1.0.0"
-  }
+    "skycons": "^1.0.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
